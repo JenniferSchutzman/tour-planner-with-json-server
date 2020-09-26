@@ -5,6 +5,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/home'
+import Interests from './pages/interests'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/interests" component={Interests} />
           </Switch>
         </div>
       </BrowserRouter>
