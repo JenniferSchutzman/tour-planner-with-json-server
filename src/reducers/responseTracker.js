@@ -1,15 +1,14 @@
-// import {
-//   SELECTED_INTEREST,
-//   CHECK_DAY,
-//   SELECTED_HISTORY,
-//   SELECTED_HAUNTED,
-//   SELECTED_CULINARY,
-//   SELECTED_ADVENTURE,
-//   MAKE_RESULTS_ARRAY,
-//   START_OVER
-// } from '../constants'
-
-import { createSlice } from '@reduxjs/toolkit'
+/* eslint-disable default-case */
+import {
+  SELECTED_INTEREST,
+  CHECK_DAY,
+  SELECTED_HISTORY,
+  SELECTED_HAUNTED,
+  SELECTED_CULINARY,
+  SELECTED_ADVENTURE,
+  MAKE_RESULTS_ARRAY,
+  START_OVER
+} from '../constants'
 
 import {
   map,
@@ -79,6 +78,9 @@ const initialState = {
   ]
 }
 //    find(x => x.name === 'history')
+
+
+
 export const stateTracker = (state = initialState, action) => {
   switch (action.type) {
     case SELECTED_INTEREST:
@@ -207,9 +209,4 @@ export const stateTracker = (state = initialState, action) => {
   return state
 }
 
-const responseTrackerSlice = createSlice({
-  name: 'responseTracker',
-  initialState: initialState
-})
-
-export default responseTracker
+export default stateTracker 

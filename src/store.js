@@ -1,18 +1,22 @@
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import tours from './reducers/tours'
+import tour from './reducers/get-tour'
+import stateTracker from './reducers/responseTracker'
+// import {
+//   checkDay,
+//   stateTrackerExperiences
+//   //homeReducer
+// } from './reducers/response-tracker'
 
-import { configureStore } from '@reduxjs/toolkit';
+const store = createStore(
+  combineReducers({
+    tour,
+    tours,
+    stateTracker
+    //homeReducer
+  }),
+  applyMiddleware(thunk)
+)
 
-import reducer from './reducers';
-
-export default function makeStore() {
-  const store = configureStore({
-    reducer,
-  });
-
-  if (module.hot) {
-    module.hot.accept('../reducers', () => {
-      store.replaceReducer(reducer);
-    });
-  }
-
-  return store;
-}
+export default store
