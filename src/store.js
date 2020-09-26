@@ -1,20 +1,18 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import monitorReducersEnhancer from './enhancers/monitorReducers'
-import loggerMiddleware from './middleware/logger'
-import rootReducer from './reducers'
+import { configureStore } from '@reduxjs/toolkit';
 
-export default function configureAppStore(preloadedState) {
+import reducer from './reducers';
+
+export default function makeStore() {
   const store = configureStore({
-    reducer: rootReducer,
-    middleware: [loggerMiddleware, ...getDefaultMiddleware()],
-    preloadedState,
-    enhancers: [monitorReducersEnhancer]
-  })
+    reducer,
+  });
 
-  if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('./reducers', () => store.replaceReducer(rootReducer))
+  if (module.hot) {
+    module.hot.accept('../reducers', () => {
+      store.replaceReducer(reducer);
+    });
   }
 
-  return store
+  return store;
 }
