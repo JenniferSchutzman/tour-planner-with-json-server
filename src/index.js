@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 
-import makeStore from './store'
+// import makeStore from './store'
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = makeStore();
+// const store = makeStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    {/* <Provider store={store}> */}
+    <App />
+    {/* </Provider> */}
 
   </React.StrictMode>,
   document.getElementById('root')
