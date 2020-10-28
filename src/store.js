@@ -1,22 +1,12 @@
-// import { createStore, combineReducers, applyMiddleware } from 'redux'
-// import thunk from 'redux-thunk'
-// // import tours from './reducers/tours'
-// // import tour from './reducers/get-tour'
-// import stateTracker from './reducers/responseTracker'
-// // import {
-// //   checkDay,
-// //   stateTrackerExperiences
-// //   //homeReducer
-// // } from './reducers/response-tracker'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import rootReducer from './reducers';
 
-// const store = createStore(
-//   combineReducers({
-//     // tour,
-//     // tours,
-//     stateTracker
-//     //homeReducer
-//   }),
-//   applyMiddleware(thunk)
-// )
+const initialState = {};
 
-// export default store
+const middleware = [thunk];
+
+const store = createStore(rootReducer, initialState, applyMiddleware(...middleware));
+
+
+export default store
