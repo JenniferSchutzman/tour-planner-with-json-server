@@ -1,3 +1,5 @@
+
+
 /* eslint-disable default-case */
 import {
   SELECTED_INTEREST,
@@ -8,16 +10,13 @@ import {
   SELECTED_ADVENTURE,
   MAKE_RESULTS_ARRAY,
   START_OVER
-} from '../constants'
+} from '../../actions/types'
 
 import {
   map,
   merge,
   compose,
   find,
-  // flatten,
-  // tap,
-  // filter,
   toLower,
   prop,
   concat
@@ -77,7 +76,7 @@ const initialState = {
     { name: 'Sunday', selected: null }
   ]
 }
-//    find(x => x.name === 'history')
+
 
 
 
@@ -91,7 +90,7 @@ export const stateTracker = (state = initialState, action) => {
       return merge(state, { interests: newState })
 
     case SELECTED_HAUNTED:
-      const wiretap = x => console.log(x)
+      // const wiretap = x => console.log(x)
       const newExpHaun = compose(
         map(
           exp =>
@@ -157,7 +156,7 @@ export const stateTracker = (state = initialState, action) => {
       )
       console.log('finalInterestsWithNewExpCul', finalInterestsWithNewExpCul)
       return merge(state, { interests: finalInterestsWithNewExpCul })
-      console.log('state after all reducer function with cul', state)
+    // console.log('state after all reducer function with cul', state)
     case SELECTED_HISTORY:
       const newExp = compose(
         map(
@@ -190,10 +189,10 @@ export const stateTracker = (state = initialState, action) => {
     case MAKE_RESULTS_ARRAY:
       var resultOptions = []
 
-      console.log(
-        'action.payload.interests',
-        JSON.stringify(action.payload.interests)
-      )
+      // console.log(
+      //   'action.payload.interests',
+      //   JSON.stringify(action.payload.interests)
+      // )
       const chosenInterest = find(i => i.selected, action.payload.interests)
       //console.log('chosenInterests', JSON.stringify(chosenInterest))
       const resultOptions1 = concat([chosenInterest.name], resultOptions)
@@ -205,6 +204,9 @@ export const stateTracker = (state = initialState, action) => {
       return (state = resultOptionsFINAL)
     case START_OVER:
       return initialState
+
+    // case default:
+    //   return state
   }
   return state
 }
