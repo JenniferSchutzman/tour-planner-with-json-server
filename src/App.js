@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/home'
 import Interests from './pages/interests'
 import Recommendations from './pages/recommendations'
+import AllTours from './pages/allTours'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/interests" component={Interests} />
             <Route exact path="/recommendations" component={Recommendations} />
+            <Route exact path="/allTours" component={AllTours} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -2,10 +2,9 @@ import React from 'react'
 import { GridList, GridListTile, Typography } from '@material-ui/core';
 
 const Interests = props => {
-  const { classes, onClick, history } = props
+  // const { classes } = props
 
   return (
-    // <h1>Hit interests</h1>
     <center>
       <GridList cellHeight={150}>
         <GridListTile cols={2} >

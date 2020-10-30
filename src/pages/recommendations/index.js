@@ -1,21 +1,22 @@
-import { fromPairs } from 'ramda';
 import React, { useState, useParams, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getTours } from '../actions/allToursActions'
+// import { connect } from 'react-redux';
+// import { getTours } from '../actions/allToursActions'
 
 const Recommendations = () => {
-  const [allTours, setAllTours] = useState([]);
-  const [recommendations, setRecommendations] = useState([])
+  // const [allTours, setAllTours] = useState([]);
+  // const [recommendations, setRecommendations] = useState([])
 
-  useEffect(() => {
-    getTours()
-  }, [])
+  // useEffect(() => {
+  //   getTours()
+  // }, [])
 
-  console.log('')
+  // console.log('')
 
   return (
     <h1>Recommendations page</h1>
   )
 }
 
-export default connect(null, { getTours })(Recommendations)
+// export default connect(null, { getTours })(Recommendations)
+
+export default Recommendations

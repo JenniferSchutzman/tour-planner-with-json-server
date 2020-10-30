@@ -1,18 +1,24 @@
+
 import fetch from 'isomorphic-fetch'
 
 import {
   ALL_TOURS,
 } from './types'
 
-const url = 'http://localhost:3000'
+const url = 'http://localhost:3000/allTours'
+
+console.log('inside getTours function')
 
 export const getTours = () => dispatch => {
+  console.log('dispatch', dispatch)
+  console.log('fetching')
   fetch(url)
     .then(res => res.json())
     .then(tours => dispatch({
       type: ALL_TOURS,
       payload: tours
     }))
+    .then(res => console.log('res', res))
 }
 
   // export const areaOfInterest = async (dispatch, getState) => {

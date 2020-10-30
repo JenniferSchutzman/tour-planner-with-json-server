@@ -3,8 +3,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { json } from './json'
-
 import { Button, Card, CardMedia, makeStyles, Typography } from '@material-ui/core';
 
 import fountain from '../../images/fountain.png'
@@ -29,13 +27,13 @@ const useStyles = makeStyles({
 
 const Home = props => {
   const classes = useStyles()
+
   let history = useHistory();
 
-  console.log('json', JSON.stringify(json))
   const goToInterests = () => {
-    console.log('goToInterests');
     history.push("/interests")
   }
+
   return (
     <center>
       <Typography variant="h3" className={classes.header}>

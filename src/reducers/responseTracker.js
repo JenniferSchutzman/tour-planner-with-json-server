@@ -10,7 +10,7 @@ import {
   SELECTED_ADVENTURE,
   MAKE_RESULTS_ARRAY,
   START_OVER
-} from '../../actions/types'
+} from '../actions/types'
 
 import {
   map,
