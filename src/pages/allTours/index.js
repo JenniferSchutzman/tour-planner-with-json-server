@@ -8,7 +8,10 @@ const AllTours = (props) => {
   console.log('props.tours', props.tours)
   // console.log('tours', tours)
   useEffect(() => {
-    getTours()
+    fetch('http://localhost:3001/allTours')
+      .then(res => res.json())
+      .then(res => console.log('res', res))
+    // getTours()
   }, [])
 
   // console.log('')

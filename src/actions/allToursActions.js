@@ -5,7 +5,7 @@ import {
   ALL_TOURS,
 } from './types'
 
-const url = 'http://localhost:3000/allTours'
+const url = 'http://localhost:3001/allTours'
 
 console.log('inside getTours function')
 
